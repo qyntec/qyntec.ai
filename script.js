@@ -1,8 +1,17 @@
-// GitHub repository configuration
-const GITHUB_REPO_OWNER = 'qyntec';
-const GITHUB_REPO_NAME = 'qyntec.ai';
+// EmailJS Configuration
+// Get your keys from: https://dashboard.emailjs.com/
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your public key
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Replace with your service ID
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Replace with your template ID
 
-// Form submission handler - creates GitHub issue
+// Initialize EmailJS
+(function() {
+    if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+    }
+})();
+
+// Form submission handler - sends email via EmailJS
 const signupForm = document.getElementById('signupForm');
 const successMessage = document.getElementById('successMessage');
 
@@ -20,35 +29,30 @@ if (signupForm) {
         submitButton.innerHTML = 'Submitting...';
         
         try {
-            // Create GitHub issue via API
-            const issueTitle = `Early Access Signup: ${email}`;
-            const issueBody = `
-## New Early Access Signup
-
-**Email:** ${email}  
-**Timestamp:** ${new Date().toISOString()}  
-**User Agent:** ${navigator.userAgent}  
-**Referrer:** ${document.referrer || 'Direct'}
-
----
-*This issue was automatically created from the landing page form submission.*
-            `.trim();
+            // Check if EmailJS is configured
+            if (typeof emailjs === 'undefined' || EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+                console.warn('EmailJS not configured - storing locally');
+                throw new Error('EmailJS not configured');
+            }
             
-            const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/issues`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/vnd.github.v3+json'
-                },
-                body: JSON.stringify({
-                    title: issueTitle,
-                    body: issueBody,
-                    labels: ['early-access', 'signup']
-                })
-            });
+            // Send email via EmailJS
+            const templateParams = {
+                user_email: email,
+                timestamp: new Date().toLocaleString(),
+                user_agent: navigator.userAgent,
+                referrer: document.referrer || 'Direct',
+                page_url: window.location.href
+            };
             
-            if (response.status === 201) {
+            const response = await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                templateParams
+            );
+            
+            if (response.status === 200) {
                 // Success!
+                console.log('✅ Email sent successfully');
                 emailInput.value = '';
                 successMessage.classList.add('show');
                 
@@ -56,21 +60,11 @@ if (signupForm) {
                 setTimeout(() => {
                     successMessage.classList.remove('show');
                 }, 5000);
-            } else if (response.status === 401 || response.status === 403) {
-                // GitHub API requires authentication for creating issues
-                // Fall back to storing locally and showing success
-                console.log('GitHub API authentication required - storing locally');
-                storeEmailLocally(email);
-                emailInput.value = '';
-                successMessage.classList.add('show');
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 5000);
             } else {
-                throw new Error('Failed to submit');
+                throw new Error('Failed to send email');
             }
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error sending email:', error);
             // Fallback: store locally
             storeEmailLocally(email);
             emailInput.value = '';
@@ -94,7 +88,7 @@ function storeEmailLocally(email) {
         timestamp: new Date().toISOString()
     });
     localStorage.setItem('earlyAccessEmails', JSON.stringify(emails));
-    console.log('Email stored locally:', email);
+    console.log('📧 Email stored locally:', email);
 }
 
 // Modal functions for footer links
