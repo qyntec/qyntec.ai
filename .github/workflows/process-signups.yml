@@ -1,0 +1,24 @@
+name: Process Email Signups
+
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: 'Email address'
+        required: true
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Early Access Signup: ${{ github.event.inputs.email }}`,
+              body: `## New Early Access Signup\n\n**Email:** ${{ github.event.inputs.email }}\n**Timestamp:** ${new Date().toISOString()}`,
+              labels: ['early-access', 'signup']
+            });
