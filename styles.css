@@ -313,133 +313,66 @@ body {
     }
 }
 
-/* Stats Grid */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    max-width: 900px;
-    margin: 0 auto 3rem;
-    width: 100%;
+/* Compact Feature Pills */
+.features-grid-compact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 700px;
+    margin: 0 auto 2rem;
 }
 
-.stat-card {
-    padding: 2rem;
-    text-align: center;
+.feature-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
     background: rgba(0, 245, 255, 0.03);
     border-color: rgba(0, 245, 255, 0.15);
-}
-
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-}
-
-.stat-label {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    border-radius: 50px;
+    font-size: 0.9375rem;
     font-weight: 500;
-}
-
-/* Features Grid */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.feature-card {
-    padding: 2rem;
-    text-align: left;
-    animation: fadeInUp 0.8s ease-out;
-    animation-fill-mode: both;
-}
-
-.feature-card:nth-child(1) { animation-delay: 0.2s; }
-.feature-card:nth-child(2) { animation-delay: 0.3s; }
-.feature-card:nth-child(3) { animation-delay: 0.4s; }
-
-.feature-icon {
-    width: 64px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 245, 255, 0.05);
-    border-radius: 16px;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(0, 245, 255, 0.1);
-}
-
-.feature-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
     color: var(--text-primary);
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
-.feature-card p {
-    color: var(--text-secondary);
-    line-height: 1.6;
+.feature-pill:hover {
+    background: rgba(0, 245, 255, 0.08);
+    border-color: rgba(0, 245, 255, 0.3);
+    transform: translateY(-2px);
 }
 
-/* Vision Section */
-.vision-card {
-    max-width: 1200px;
+.feature-icon-small {
+    font-size: 1.25rem;
+    filter: grayscale(0.2);
+}
+
+/* Teaser Card */
+.teaser-card {
+    max-width: 800px;
     margin: 0 auto;
     padding: 3rem;
-}
-
-.section-title {
-    font-size: 2rem;
-    font-weight: 700;
     text-align: center;
-    margin-bottom: 3rem;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: rgba(0, 245, 255, 0.02);
+    border-color: rgba(0, 245, 255, 0.1);
 }
 
-.vision-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.vision-item {
-    text-align: center;
-}
-
-.vision-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    filter: grayscale(0.3);
-}
-
-.vision-item h4 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
-}
-
-.vision-item p {
-    font-size: 0.9375rem;
+.teaser-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
     color: var(--text-secondary);
-    line-height: 1.6;
+    margin: 0;
 }
+
+.teaser-text .gradient-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+    margin-top: 1rem;
+}
+
 
 /* Success Icon */
 .success-icon {
@@ -642,25 +575,25 @@ body {
         filter: blur(80px);
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr;
+    .features-grid-compact {
+        gap: 0.75rem;
     }
 
-    .stat-number {
-        font-size: 2.5rem;
+    .feature-pill {
+        padding: 0.875rem 1.25rem;
+        font-size: 0.875rem;
     }
 
-    .vision-card {
+    .teaser-card {
         padding: 2rem 1.5rem;
     }
 
-    .section-title {
-        font-size: 1.75rem;
+    .teaser-text {
+        font-size: 1.125rem;
     }
 
-    .vision-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+    .teaser-text .gradient-text {
+        font-size: 1.25rem;
     }
 }
 
@@ -669,7 +602,12 @@ body {
         font-size: 2rem;
     }
 
-    .feature-card {
-        padding: 1.5rem;
+    .teaser-text {
+        font-size: 1rem;
+    }
+
+    .feature-pill {
+        padding: 0.75rem 1rem;
+        font-size: 0.8125rem;
     }
 }
