@@ -22,8 +22,10 @@ if (signupForm) {
         e.preventDefault();
         
         const emailInput = document.getElementById('emailInput');
+        const messageInput = document.getElementById('messageInput');
         const submitButton = signupForm.querySelector('button[type="submit"]');
         const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
         
         // Disable button during submission
         submitButton.disabled = true;
@@ -40,6 +42,7 @@ if (signupForm) {
             // Send email via EmailJS
             const templateParams = {
                 user_email: email,
+                user_message: message || 'No message provided',
                 timestamp: new Date().toLocaleString(),
                 user_agent: navigator.userAgent,
                 referrer: document.referrer || 'Direct',
@@ -56,6 +59,7 @@ if (signupForm) {
                 // Success!
                 console.log('✅ Email sent successfully');
                 emailInput.value = '';
+                messageInput.value = '';
                 successMessage.classList.add('show');
                 
                 // Hide success message after 5 seconds
@@ -68,8 +72,9 @@ if (signupForm) {
         } catch (error) {
             console.error('Error sending email:', error);
             // Fallback: store locally
-            storeEmailLocally(email);
+            storeEmailLocally(email, message);
             emailInput.value = '';
+            messageInput.value = '';
             successMessage.classList.add('show');
             setTimeout(() => {
                 successMessage.classList.remove('show');
@@ -82,11 +87,12 @@ if (signupForm) {
     });
 }
 
-function storeEmailLocally(email) {
+function storeEmailLocally(email, message) {
     // Store in localStorage as backup
     let emails = JSON.parse(localStorage.getItem('earlyAccessEmails') || '[]');
     emails.push({
         email: email,
+        message: message || 'No message provided',
         timestamp: new Date().toISOString()
     });
     localStorage.setItem('earlyAccessEmails', JSON.stringify(emails));

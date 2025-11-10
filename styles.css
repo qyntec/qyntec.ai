@@ -226,6 +226,13 @@ body {
     align-items: center;
 }
 
+.textarea-wrapper {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
 .glass-input {
     padding: 0 1.5rem;
     background: rgba(255, 255, 255, 0.05);
@@ -256,6 +263,23 @@ body {
 }
 
 .glass-input input::placeholder {
+    color: var(--text-secondary);
+}
+
+.glass-input textarea {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 1rem 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 60px;
+}
+
+.glass-input textarea::placeholder {
     color: var(--text-secondary);
 }
 
