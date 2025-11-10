@@ -1,13 +1,15 @@
 // EmailJS Configuration
 // Get your keys from: https://dashboard.emailjs.com/
-const EMAILJS_PUBLIC_KEY = 'cMYkn122AR65PvXmE'; // Your public key
-const EMAILJS_SERVICE_ID = 'yuOke4TIpGbK1tKmgGj3o'; // Your service ID
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Replace with your template ID after creating it
+const EMAILJS_PUBLIC_KEY = 'cMYkn122AR65PvXmE'; // Your public key (from Account page)
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Get from Email Services page (e.g., service_abc123)
+const EMAILJS_TEMPLATE_ID = 'template_3wpv17r'; // Get from Email Templates page (e.g., template_xyz789)
 
-// Initialize EmailJS
+// Initialize EmailJS with public key
 (function() {
-    if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY') {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init({
+            publicKey: EMAILJS_PUBLIC_KEY
+        });
     }
 })();
 
@@ -30,8 +32,8 @@ if (signupForm) {
         
         try {
             // Check if EmailJS is configured
-            if (typeof emailjs === 'undefined' || EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
-                console.warn('EmailJS not configured - storing locally');
+            if (typeof emailjs === 'undefined' || EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' || EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
+                console.warn('EmailJS not fully configured - storing locally');
                 throw new Error('EmailJS not configured');
             }
             

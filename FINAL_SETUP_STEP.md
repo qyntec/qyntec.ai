@@ -1,8 +1,29 @@
-# Final Setup Step - Create Email Template
+# Final Setup Steps - Service ID & Template
 
-Your EmailJS credentials are already configured! Just one more step:
+Your EmailJS **Public Key** is configured: `cMYkn122AR65PvXmE` ✅
 
-## Create Email Template (2 minutes)
+Now you need to get your **Service ID** and create a **Template**:
+
+---
+
+## Step 1: Get Your Service ID
+
+1. **Go to Email Services:**
+   https://dashboard.emailjs.com/admin
+
+2. **Look for your email service** (Gmail, Outlook, etc.)
+
+3. **Copy the Service ID** (looks like: `service_abc123xyz`)
+   - It's shown in the service card
+
+4. **Update `script.js` line 4:**
+   ```javascript
+   const EMAILJS_SERVICE_ID = 'service_abc123xyz'; // Your service ID here
+   ```
+
+---
+
+## Step 2: Create Email Template (2 minutes)
 
 1. **Go to EmailJS Dashboard:**
    https://dashboard.emailjs.com/admin/templates
