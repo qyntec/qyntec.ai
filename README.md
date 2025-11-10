@@ -2,59 +2,45 @@
 
 Ultra-modern, minimal black-themed pre-launch landing page with glassmorphism effects.
 
-## Features
+## ✨ Features
 
 - 🎨 **Glassmorphism Design** - Modern frosted glass UI elements
 - 🌑 **Dark Theme** - Sleek black background with gradient accents
 - ✨ **Animated Gradients** - Dynamic floating orb effects
 - 📱 **Fully Responsive** - Optimized for all devices
 - ⚡ **Pure Static** - No build process required
-- 🚀 **Netlify Ready** - Configured for instant deployment
+- 📧 **Email Notifications** - EmailJS integration for instant alerts
 
-## Tech Stack
+## 🚀 Quick Start
 
-- Pure HTML5
-- CSS3 (Glassmorphism, Animations, Grid/Flexbox)
-- Vanilla JavaScript
-- Google Fonts (Inter)
-
-## Local Development
-
-Simply open `index.html` in your browser. No build process needed.
-
+### Local Development
 ```bash
-# Using Python
 python -m http.server 8000
-
-# Using Node.js
+# or
 npx serve
-
-# Using PHP
-php -S localhost:8000
 ```
+Visit `http://localhost:8000`
 
-Then visit `http://localhost:8000`
+### Deploy to GitHub Pages
+1. Push to GitHub
+2. Enable GitHub Pages in Settings → Pages
+3. Live at: `https://qyntec.github.io/qyntec.ai/`
 
-## Deployment
+**Full setup guide:** See [SETUP.md](SETUP.md)
 
-### GitHub Pages (Recommended)
+## 📧 Email Setup
 
-1. Enable GitHub Pages in repository settings
-2. Set source to `main` branch
-3. Site will be live at `https://qyntec.github.io/qyntec.ai/`
+Configure EmailJS to receive signup notifications:
 
-See [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md) for detailed instructions.
+1. Sign up at [emailjs.com](https://www.emailjs.com/)
+2. Get your keys
+3. Update `script.js` with your credentials
 
-### Alternative: Netlify
+**Detailed guide:** See [EMAILJS_SETUP.md](EMAILJS_SETUP.md)
 
-```bash
-netlify deploy --prod
-```
+## 🎨 Customization
 
-## Customization
-
-### Colors
-Edit CSS variables in `styles.css`:
+Edit `styles.css` for colors:
 ```css
 :root {
     --bg-primary: #0a0a0a;
@@ -63,29 +49,21 @@ Edit CSS variables in `styles.css`:
 }
 ```
 
-### Content
-- Update text in `index.html`
-- Modify logo and branding
-- Adjust feature cards
+Edit `index.html` for content.
 
-### Email Collection
-Email signups create **GitHub Issues** automatically:
-- Each submission creates an issue with `early-access` label
-- View all signups: https://github.com/qyntec/qyntec.ai/issues?q=label%3Aearly-access
-- Includes email, timestamp, and user agent
-- Falls back to localStorage if GitHub API requires auth
-- No backend or database required
+## 📚 Documentation
 
-**Setup:**
-See [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md) for enabling automatic issue creation
+- **[SETUP.md](SETUP.md)** - Complete deployment guide
+- **[EMAILJS_SETUP.md](EMAILJS_SETUP.md)** - Email notification setup
+- **[WEBHOOK_TRIGGER.md](WEBHOOK_TRIGGER.md)** - GitHub webhook integration
 
-## Browser Support
+## 🛠️ Tech Stack
 
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers
+- Pure HTML5, CSS3, Vanilla JavaScript
+- EmailJS for email notifications
+- GitHub Pages for hosting
+- Google Fonts (Inter)
 
-## License
+## 📄 License
 
 All rights reserved.
