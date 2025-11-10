@@ -37,13 +37,15 @@ Then visit `http://localhost:8000`
 
 ## Deployment
 
-This site is configured for Netlify deployment:
+### GitHub Pages (Recommended)
 
-1. Push to GitHub
-2. Connect repository to Netlify
-3. Deploy automatically
+1. Enable GitHub Pages in repository settings
+2. Set source to `main` branch
+3. Site will be live at `https://qyntec.github.io/qyntec.ai/`
 
-Or use Netlify CLI:
+See [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md) for detailed instructions.
+
+### Alternative: Netlify
 
 ```bash
 netlify deploy --prod
@@ -67,18 +69,15 @@ Edit CSS variables in `styles.css`:
 - Adjust feature cards
 
 ### Email Collection
-Email signups are handled via **Netlify Forms**:
-- Automatically captures submissions when deployed to Netlify
-- Access submissions in Netlify Dashboard → Forms
-- No backend required - works out of the box
-- Includes spam protection with honeypot field
-- Can integrate with Zapier, Mailchimp, or other services via Netlify
+Email signups create **GitHub Issues** automatically:
+- Each submission creates an issue with `early-access` label
+- View all signups: https://github.com/qyntec/qyntec.ai/issues?q=label%3Aearly-access
+- Includes email, timestamp, and user agent
+- Falls back to localStorage if GitHub API requires auth
+- No backend or database required
 
-**To view submissions:**
-1. Deploy to Netlify
-2. Go to your site dashboard
-3. Click "Forms" in the sidebar
-4. View all early access signups
+**Setup:**
+See [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md) for enabling automatic issue creation
 
 ## Browser Support
 

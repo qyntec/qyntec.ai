@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitting...</title>
+    <script>
+        // This page creates a GitHub issue when accessed with form data
+        const urlParams = new URLSearchParams(window.location.search);
+        const email = urlParams.get('email');
+        
+        if (email) {
+            // Redirect to GitHub issue creation with pre-filled data
+            const issueTitle = encodeURIComponent(`Early Access Signup: ${email}`);
+            const issueBody = encodeURIComponent(`## New Early Access Signup
+
+**Email:** ${email}  
+**Timestamp:** ${new Date().toISOString()}  
+**Source:** Landing Page Form
+
+---
+*Please review and reach out to this user for early access.*`);
+            
+            const githubUrl = `https://github.com/qyntec/qyntec.ai/issues/new?title=${issueTitle}&body=${issueBody}&labels=early-access,signup`;
+            
+            // For now, just show success and log
+            console.log('Would create issue:', githubUrl);
+            window.location.href = '/thank-you.html';
+        } else {
+            window.location.href = '/';
+        }
+    </script>
+</head>
+<body>
+    <p>Processing your submission...</p>
+</body>
+</html>

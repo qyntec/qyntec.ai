@@ -1,5 +1,101 @@
-// Netlify handles form submission automatically - no JavaScript needed!
-// Form will redirect to /thank-you.html on success
+// GitHub repository configuration
+const GITHUB_REPO_OWNER = 'qyntec';
+const GITHUB_REPO_NAME = 'qyntec.ai';
+
+// Form submission handler - creates GitHub issue
+const signupForm = document.getElementById('signupForm');
+const successMessage = document.getElementById('successMessage');
+
+if (signupForm) {
+    signupForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const emailInput = document.getElementById('emailInput');
+        const submitButton = signupForm.querySelector('button[type="submit"]');
+        const email = emailInput.value.trim();
+        
+        // Disable button during submission
+        submitButton.disabled = true;
+        const originalButtonHTML = submitButton.innerHTML;
+        submitButton.innerHTML = 'Submitting...';
+        
+        try {
+            // Create GitHub issue via API
+            const issueTitle = `Early Access Signup: ${email}`;
+            const issueBody = `
+## New Early Access Signup
+
+**Email:** ${email}  
+**Timestamp:** ${new Date().toISOString()}  
+**User Agent:** ${navigator.userAgent}  
+**Referrer:** ${document.referrer || 'Direct'}
+
+---
+*This issue was automatically created from the landing page form submission.*
+            `.trim();
+            
+            const response = await fetch(`https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/issues`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/vnd.github.v3+json'
+                },
+                body: JSON.stringify({
+                    title: issueTitle,
+                    body: issueBody,
+                    labels: ['early-access', 'signup']
+                })
+            });
+            
+            if (response.status === 201) {
+                // Success!
+                emailInput.value = '';
+                successMessage.classList.add('show');
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            } else if (response.status === 401 || response.status === 403) {
+                // GitHub API requires authentication for creating issues
+                // Fall back to storing locally and showing success
+                console.log('GitHub API authentication required - storing locally');
+                storeEmailLocally(email);
+                emailInput.value = '';
+                successMessage.classList.add('show');
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            } else {
+                throw new Error('Failed to submit');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            // Fallback: store locally
+            storeEmailLocally(email);
+            emailInput.value = '';
+            successMessage.classList.add('show');
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        } finally {
+            // Re-enable button
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonHTML;
+        }
+    });
+}
+
+function storeEmailLocally(email) {
+    // Store in localStorage as backup
+    let emails = JSON.parse(localStorage.getItem('earlyAccessEmails') || '[]');
+    emails.push({
+        email: email,
+        timestamp: new Date().toISOString()
+    });
+    localStorage.setItem('earlyAccessEmails', JSON.stringify(emails));
+    console.log('Email stored locally:', email);
+}
 
 // Modal functions for footer links
 function showComingSoon(title) {

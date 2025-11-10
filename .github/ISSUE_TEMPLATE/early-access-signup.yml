@@ -1,0 +1,43 @@
+name: Early Access Signup
+description: Sign up for early access to our healthcare platform
+title: "[Early Access] "
+labels: ["early-access", "signup"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Sign up for Early Access
+        Thank you for your interest! Please provide your email below.
+  
+  - type: input
+    id: email
+    attributes:
+      label: Email Address
+      description: We'll use this to contact you about early access
+      placeholder: your.email@example.com
+    validations:
+      required: true
+  
+  - type: textarea
+    id: interest
+    attributes:
+      label: What interests you most? (Optional)
+      description: Tell us what excites you about our platform
+      placeholder: AI-powered workflows, unified platform, etc.
+    validations:
+      required: false
+  
+  - type: dropdown
+    id: role
+    attributes:
+      label: Your Role
+      description: What best describes your role?
+      options:
+        - Healthcare Provider
+        - Hospital Administrator
+        - IT Professional
+        - Developer/Engineer
+        - Investor
+        - Other
+    validations:
+      required: false
