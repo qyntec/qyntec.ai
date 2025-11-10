@@ -315,38 +315,40 @@ body {
 
 /* Compact Feature Pills */
 .features-grid-compact {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    justify-content: center;
-    max-width: 700px;
-    margin: 0 auto 2rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
 }
 
 .feature-pill {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 1.75rem;
     background: rgba(0, 245, 255, 0.03);
     border-color: rgba(0, 245, 255, 0.15);
-    border-radius: 50px;
-    font-size: 0.9375rem;
+    border-radius: 16px;
+    font-size: 1rem;
     font-weight: 500;
     color: var(--text-primary);
     transition: all 0.3s ease;
     white-space: nowrap;
+    justify-content: flex-start;
 }
 
 .feature-pill:hover {
     background: rgba(0, 245, 255, 0.08);
     border-color: rgba(0, 245, 255, 0.3);
     transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 245, 255, 0.15);
 }
 
 .feature-icon-small {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     filter: grayscale(0.2);
+    flex-shrink: 0;
 }
 
 /* Teaser Card */
@@ -576,12 +578,14 @@ body {
     }
 
     .features-grid-compact {
+        grid-template-columns: 1fr;
         gap: 0.75rem;
+        max-width: 400px;
     }
 
     .feature-pill {
-        padding: 0.875rem 1.25rem;
-        font-size: 0.875rem;
+        padding: 1rem 1.5rem;
+        font-size: 0.9375rem;
     }
 
     .teaser-card {
