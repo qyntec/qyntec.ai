@@ -193,7 +193,7 @@ body {
 }
 
 .main-card {
-    text-align: center;
+    text-align: left;
     max-width: 1100px;
     margin: 0 auto;
     animation: fadeInUp 1s ease-out 0.2s both;
