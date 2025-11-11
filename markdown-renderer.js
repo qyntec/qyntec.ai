@@ -4,8 +4,8 @@ function renderMarkdown(markdown) {
     
     // Headers
     html = html.replace(/^# (.*$)/gim, '<h1 style="color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700;">$1</h1>');
-    html = html.replace(/^## (.*$)/gim, '<h2 style="color: #00f5ff; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600; margin-top: 2.5rem;">$2</h2>');
-    html = html.replace(/^### (.*$)/gim, '<h3 style="color: #00f5ff; font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 600; margin-top: 1.5rem;">$3</h3>');
+    html = html.replace(/^## (.*$)/gim, '<h2 style="color: #00f5ff; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600; margin-top: 2.5rem;">$1</h2>');
+    html = html.replace(/^### (.*$)/gim, '<h3 style="color: #00f5ff; font-size: 1.25rem; margin-bottom: 0.75rem; font-weight: 600; margin-top: 1.5rem;">$1</h3>');
     
     // Bold text
     html = html.replace(/\*\*(.*?)\*\*/gim, '<strong style="color: #ffffff;">$1</strong>');
