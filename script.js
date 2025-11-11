@@ -134,8 +134,8 @@ function showContactInfo() {
         </p>
         <p style="color: #ffffff; margin-bottom: 1.5rem;">
             For partnership inquiries, please email:<br>
-            <a href="mailto:partnerships@healthtech.com" style="color: #00f5ff; text-decoration: none;">
-                partnerships@healthtech.com
+            <a href="mailto:partnerships@qyntec.ai" style="color: #00f5ff; text-decoration: none;">
+                partnerships@qyntec.ai
             </a>
         </p>
         <button class="btn-primary" onclick="closeModal()" style="width: 100%; justify-content: center;">
