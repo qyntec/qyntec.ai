@@ -15,6 +15,7 @@ const EMAILJS_TEMPLATE_ID = 'template_3wpv17r'; // Your template ID
 
 // Form submission handler - sends email via EmailJS
 const signupForm = document.getElementById('signupForm');
+const contactForm = document.getElementById('contactForm');
 const successMessage = document.getElementById('successMessage');
 
 if (signupForm) {
@@ -87,6 +88,88 @@ if (signupForm) {
     });
 }
 
+// Contact form handler
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const nameInput = document.getElementById('nameInput');
+        const emailInput = document.getElementById('emailInput');
+        const subjectInput = document.getElementById('subjectInput');
+        const messageInput = document.getElementById('messageInput');
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const subject = subjectInput.value.trim();
+        const message = messageInput.value.trim();
+        
+        // Disable button during submission
+        submitButton.disabled = true;
+        const originalButtonHTML = submitButton.innerHTML;
+        submitButton.innerHTML = 'Sending...';
+        
+        try {
+            // Check if EmailJS is configured
+            if (typeof emailjs === 'undefined' || EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' || EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
+                console.warn('EmailJS not fully configured - storing locally');
+                throw new Error('EmailJS not configured');
+            }
+            
+            // Send email via EmailJS
+            const templateParams = {
+                user_name: name,
+                user_email: email,
+                subject: subject,
+                user_message: message,
+                timestamp: new Date().toLocaleString(),
+                user_agent: navigator.userAgent,
+                referrer: document.referrer || 'Direct',
+                page_url: window.location.href
+            };
+            
+            const response = await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                templateParams
+            );
+            
+            if (response.status === 200) {
+                // Success!
+                console.log('✅ Contact form sent successfully');
+                nameInput.value = '';
+                emailInput.value = '';
+                subjectInput.value = '';
+                messageInput.value = '';
+                successMessage.classList.add('show');
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            } else {
+                throw new Error('Failed to send contact form');
+            }
+        } catch (error) {
+            console.error('Error sending contact form:', error);
+            // Fallback: store locally
+            storeContactLocally(name, email, subject, message);
+            nameInput.value = '';
+            emailInput.value = '';
+            subjectInput.value = '';
+            messageInput.value = '';
+            successMessage.classList.add('show');
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
+        } finally {
+            // Re-enable button
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonHTML;
+        }
+    });
+}
+
 function storeEmailLocally(email, message) {
     // Store in localStorage as backup
     let emails = JSON.parse(localStorage.getItem('earlyAccessEmails') || '[]');
@@ -97,6 +180,20 @@ function storeEmailLocally(email, message) {
     });
     localStorage.setItem('earlyAccessEmails', JSON.stringify(emails));
     console.log('📧 Email stored locally:', email);
+}
+
+function storeContactLocally(name, email, subject, message) {
+    // Store contact form submissions in localStorage as backup
+    let contacts = JSON.parse(localStorage.getItem('contactFormSubmissions') || '[]');
+    contacts.push({
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+        timestamp: new Date().toISOString()
+    });
+    localStorage.setItem('contactFormSubmissions', JSON.stringify(contacts));
+    console.log('📧 Contact form stored locally:', email);
 }
 
 // Modal functions for footer links
