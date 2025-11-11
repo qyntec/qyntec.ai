@@ -1,69 +1,49 @@
-# HealthTech Landing Page
+# Qyntec.ai
 
-Ultra-modern, minimal black-themed pre-launch landing page with glassmorphism effects.
+**Re-architecting Healthcare, One Record at a Time.**
 
-## ✨ Features
+---
 
-- 🎨 **Glassmorphism Design** - Modern frosted glass UI elements
-- 🌑 **Dark Theme** - Sleek black background with gradient accents
-- ✨ **Animated Gradients** - Dynamic floating orb effects
-- 📱 **Fully Responsive** - Optimized for all devices
-- ⚡ **Pure Static** - No build process required
-- 📧 **Email Notifications** - EmailJS integration for instant alerts
+## About Qyntec.ai
 
-## 🚀 Quick Start
+Qyntec.ai is building the healthcare platform clinicians actually want. We're creating a unified, AI-powered infrastructure that transforms healthcare data into actionable intelligence—empowering clinicians to deliver better care, faster.
 
-### Local Development
-```bash
-python -m http.server 8000
-# or
-npx serve
-```
-Visit `http://localhost:8000`
+### Our Mission
 
-### Deploy to GitHub Pages
-1. Push to GitHub
-2. Enable GitHub Pages in Settings → Pages
-3. Live at: `https://qyntec.github.io/qyntec.ai/`
+Transforming healthcare data into actionable intelligence—empowering clinicians to deliver better care, faster.
 
-**Full setup guide:** See [SETUP.md](SETUP.md)
+### The Problem We're Solving
 
-## 📧 Email Setup
+Healthcare systems are drowning in fragmented data, legacy infrastructure, and disconnected workflows. Clinicians spend more time fighting technology than caring for patients.
 
-Configure EmailJS to receive signup notifications:
+### Our Solution
 
-1. Sign up at [emailjs.com](https://www.emailjs.com/)
-2. Get your keys
-3. Update `script.js` with your credentials
+A unified, AI-powered platform built from scratch—no legacy constraints. Seamlessly connecting hospital and ambulatory care with intelligent automation at its core.
 
-**Detailed guide:** See [EMAILJS_SETUP.md](EMAILJS_SETUP.md)
+## Why Qyntec.ai?
 
-## 🎨 Customization
+- **🏗️ Built for Today, Not Yesterday** - Modern cloud-native architecture designed for the AI era
+- **🤝 Clinician-First Design** - Every feature designed with real clinicians, reducing clicks and cognitive load
+- **🔄 True Interoperability** - Data flows seamlessly across care settings
+- **🚀 AI-Powered Intelligence** - Predictive insights, automated workflows, and clinical decision support that actually helps
 
-Edit `styles.css` for colors:
-```css
-:root {
-    --bg-primary: #0a0a0a;
-    --accent-cyan: #00f5ff;
-    --accent-blue: #0066ff;
-}
-```
+## Who We Serve
 
-Edit `index.html` for content.
+- 🏥 Health Systems
+- 👨‍⚕️ Clinicians
+- 💼 Healthcare CIOs
+- 🏢 Ambulatory Networks
 
-## 📚 Documentation
+## Get Early Access
 
-- **[SETUP.md](SETUP.md)** - Complete deployment guide
-- **[EMAILJS_SETUP.md](EMAILJS_SETUP.md)** - Email notification setup
-- **[WEBHOOK_TRIGGER.md](WEBHOOK_TRIGGER.md)** - GitHub webhook integration
+Visit [qyntec.ai](https://qyntec.github.io/qyntec.ai/) to join our waitlist and be among the first to experience the future of healthcare technology.
 
-## 🛠️ Tech Stack
+---
 
-- Pure HTML5, CSS3, Vanilla JavaScript
-- EmailJS for email notifications
-- GitHub Pages for hosting
-- Google Fonts (Inter)
+## Contact
 
-## 📄 License
+For inquiries, partnerships, or investment opportunities, please reach out through our website.
 
-All rights reserved.
+## License
+
+© 2024 Qyntec.ai. All rights reserved.

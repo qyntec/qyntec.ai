@@ -1,0 +1,35 @@
+/* Qyntec.ai Logo Component Styles - Email Safe (No Animations) */
+
+.qyntec-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.qyntec-logo svg {
+    flex-shrink: 0;
+}
+
+.qyntec-logo-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.qyntec-logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #10b981, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.qyntec-logo-tagline {
+    font-size: 0.875rem;
+    color: #a0a0a0;
+    font-weight: 400;
+    line-height: 1.3;
+    white-space: nowrap;
+}
