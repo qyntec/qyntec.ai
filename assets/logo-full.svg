@@ -1,0 +1,18 @@
+<svg width="500" height="80" viewBox="0 0 500 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="heartGradient" x1="14" y1="26" x2="46" y2="55">
+            <stop offset="0%" stop-color="#10b981"/>
+            <stop offset="100%" stop-color="#06b6d4"/>
+        </linearGradient>
+    </defs>
+    <!-- Heart shape -->
+    <path d="M30 55C30 55 14 45 14 34C14 29 17 26 21 26C24 26 27 28 30 31C33 28 36 26 39 26C43 26 46 29 46 34C46 45 30 55 30 55Z" 
+          fill="url(#heartGradient)" stroke="#10b981" stroke-width="1.5"/>
+    <!-- Pulse line -->
+    <path d="M18 40 L24 40 L26 34 L28 46 L30 38 L32 42 L34 40 L42 40" 
+          stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+    <!-- Company name -->
+    <text x="70" y="45" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1f2937">Qyntec.ai</text>
+    <!-- Tagline -->
+    <text x="70" y="62" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">Re-architecting Healthcare, One Record at a Time.</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="heartGradient" x1="4" y1="6" x2="36" y2="35">
+            <stop offset="0%" stop-color="#10b981"/>
+            <stop offset="100%" stop-color="#06b6d4"/>
+        </linearGradient>
+    </defs>
+    <!-- Heart shape -->
+    <path d="M20 35C20 35 4 25 4 14C4 9 7 6 11 6C14 6 17 8 20 11C23 8 26 6 29 6C33 6 36 9 36 14C36 25 20 35 20 35Z" 
+          fill="url(#heartGradient)" stroke="#10b981" stroke-width="1.5"/>
+    <!-- Pulse line -->
+    <path d="M8 20 L14 20 L16 14 L18 26 L20 18 L22 22 L24 20 L32 20" 
+          stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+</svg>
