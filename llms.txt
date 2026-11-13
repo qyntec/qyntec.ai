@@ -1,0 +1,18 @@
+# Qyntec.ai
+
+> Re-architecting Healthcare, One Record at a Time. Qyntec.ai is building the healthcare platform clinicians actually want. Coming soon.
+
+Qyntec.ai is a unified, AI-powered healthcare platform built from scratch, with zero legacy constraints. It connects hospital and ambulatory care and turns healthcare data into actionable intelligence so clinicians can deliver better care, faster. It is for health systems, clinicians, healthcare CIOs, and ambulatory networks.
+
+## Pages
+
+- [Home](https://qyntec.ai/): The healthcare platform clinicians actually want, including the mission, the problem, the solution, and early access.
+- [Contact](https://qyntec.ai/contact.html): Questions about the platform, partnerships, and early access. General inquiries, partnerships, and support.
+- [Privacy Policy](https://qyntec.ai/privacy.html): How Qyntec.ai collects, uses, discloses, and safeguards information when you visit the website or use the services, and the rights you have.
+- [Terms of Service](https://qyntec.ai/terms.html): Terms for the Qyntec.ai website and services. The platform is in development, with access limited to early adopters and beta participants.
+- [Thank You](https://qyntec.ai/thank-you.html): Confirmation that an early access signup is on the list.
+
+## Optional
+
+- [LinkedIn](https://www.linkedin.com/company/qyntec): Qyntec company page.
+- [Full page copy](https://qyntec.ai/llms-full.txt): The text of each public page in one file.
