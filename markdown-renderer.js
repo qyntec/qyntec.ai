@@ -28,10 +28,14 @@ function renderMarkdown(markdown) {
 }
 
 // Load markdown content
-async function loadMarkdownContent(markdownPath, containerId) {
+async function loadMarkdownContent(markdownPath, containerId, options) {
+    const skipH1 = Boolean(options && options.skipH1);
     try {
         const response = await fetch(markdownPath);
-        const markdown = await response.text();
+        let markdown = await response.text();
+        if (skipH1) {
+            markdown = markdown.replace(/^# .+(\r?\n)+/, '');
+        }
         const html = renderMarkdown(markdown);
         document.getElementById(containerId).innerHTML = html;
     } catch (error) {

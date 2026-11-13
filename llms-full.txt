@@ -1,0 +1,218 @@
+# Qyntec.ai
+
+> Re-architecting Healthcare, One Record at a Time. Full text of the public pages on https://qyntec.ai. Coming soon.
+
+## Home
+
+https://qyntec.ai/
+
+Qyntec.ai
+Re-architecting Healthcare, One Record at a Time.
+
+Coming Soon
+
+The Healthcare Platform Clinicians Actually Want
+
+No more fighting legacy systems. No more fragmented data. No more endless clicks. A unified, AI-powered platform that puts clinical workflows first built for the way healthcare should work, not the way it used to.
+
+Get Early Access
+
+Zero Legacy
+AI-Native
+Unified Platform
+Real-Time
+
+Our Mission
+
+Transforming healthcare data into actionable intelligence empowering clinicians to deliver better care, faster.
+
+The Problem
+
+Healthcare systems are drowning in fragmented data, legacy infrastructure, and disconnected workflows. Clinicians spend more time fighting technology than caring for patients.
+
+Our Solution
+
+A unified, AI-powered platform built from scratch no legacy constraints. Seamlessly connecting hospital and ambulatory care with intelligent automation at its core.
+
+Why Qyntec.ai?
+
+Built for Today, Not Yesterday
+Modern cloud-native architecture designed for the AI era no retrofitting legacy systems.
+
+Clinician-First Design
+Every feature designed with real clinicians, reducing clicks and cognitive load.
+
+True Interoperability
+Data flows seamlessly across care settings hospital, clinic, home, and everywhere in between.
+
+AI-Powered Intelligence
+Predictive insights, automated workflows, and clinical decision support that actually helps.
+
+Built For Healthcare Leaders
+
+Health Systems
+Clinicians
+Healthcare CIOs
+Ambulatory Networks
+
+What if healthcare technology wasn't held back by decades-old architecture?
+We're building that future. Join us.
+
+## Contact
+
+https://qyntec.ai/contact.html
+
+Get in Touch
+
+Have questions about our platform? Interested in partnerships or early access? We'd love to hear from you.
+
+Send Message
+
+Other Ways to Reach Us
+
+General Inquiries: info@qyntec.ai
+Partnerships: partnerships@qyntec.ai
+Support: support@qyntec.ai
+
+## Privacy Policy
+
+https://qyntec.ai/privacy.html
+
+# Privacy Policy
+
+**Last Updated:** November 2025
+
+## Our Commitment to Privacy
+
+At Qyntec.ai, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+
+## Information We Collect
+
+### Personal Information:
+- Email addresses provided through our signup form
+- Messages and feedback you provide
+- Professional information (organization, role) if voluntarily provided
+
+### Usage Data:
+- Browser type and version
+- Pages visited and time spent on our site
+- IP address and general location data
+
+## How We Use Your Information
+
+- To communicate updates about our platform development
+- To provide early access and beta testing opportunities
+- To improve our website and services
+- To respond to your inquiries and requests
+
+## HIPAA Compliance
+
+As a healthcare technology platform, Qyntec.ai is committed to full compliance with the Health Insurance Portability and Accountability Act (HIPAA). All protected health information (PHI) is encrypted, stored securely, and accessed only by authorized personnel. We maintain comprehensive Business Associate Agreements (BAAs) with all partners who may access PHI.
+
+## Data Security
+
+We implement industry-standard security measures to protect your information, including:
+
+- End-to-end encryption for data in transit and at rest
+- Regular security audits and penetration testing
+- Access controls and authentication mechanisms
+- Continuous monitoring for security threats
+
+## Data Sharing
+
+We do not sell, trade, or rent your personal information to third parties. We may share your information only in the following circumstances:
+
+- With service providers who assist in our operations (under strict confidentiality agreements)
+- When required by law or to protect our legal rights
+- With your explicit consent
+
+## Your Rights
+
+You have the right to:
+
+- Access the personal information we hold about you
+- Request correction of inaccurate information
+- Request deletion of your information
+- Opt-out of marketing communications at any time
+
+## Cookies and Tracking
+
+We use cookies and similar tracking technologies to improve your experience on our website. You can control cookie settings through your browser preferences.
+
+## Contact Us
+
+If you have questions about this Privacy Policy or wish to exercise your rights, please contact us at:
+
+**Email:** privacy@qyntec.ai
+
+## Terms of Service
+
+https://qyntec.ai/terms.html
+
+# Terms of Service
+
+**Last Updated:** November 2025
+
+## 1. Acceptance of Terms
+
+By accessing or using Qyntec.ai's website and services, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.
+
+## 2. Service Description
+
+Qyntec.ai is developing an AI-powered healthcare platform designed to unify hospital and ambulatory care workflows. Our platform is currently in development, and access is limited to early adopters and beta participants.
+
+## 3. User Responsibilities
+
+You agree to:
+
+- Provide accurate and complete information when registering for early access
+- Maintain the confidentiality of any account credentials
+- Use the platform in compliance with all applicable laws and regulations
+- Not attempt to gain unauthorized access to our systems or data
+
+## 4. Healthcare Compliance
+
+Qyntec.ai is committed to compliance with HIPAA, HITECH, and other applicable healthcare regulations. All protected health information (PHI) will be handled in accordance with these standards. Users must also ensure their use of the platform complies with all relevant healthcare laws.
+
+## 5. Intellectual Property
+
+All content, features, and functionality of the Qyntec.ai platform, including but not limited to software, text, graphics, logos, and AI models, are owned by Qyntec.ai and are protected by intellectual property laws. You may not copy, modify, or distribute our intellectual property without explicit written permission.
+
+## 6. Limitation of Liability
+
+Qyntec.ai provides the platform "as is" without warranties of any kind. We are not liable for any indirect, incidental, or consequential damages arising from your use of the platform. This limitation applies to the fullest extent permitted by law.
+
+## 7. Beta Testing and Early Access
+
+If you participate in beta testing or early access programs, you acknowledge that the platform may contain bugs or incomplete features. You agree to provide feedback and report issues, and you understand that beta features may change or be discontinued without notice.
+
+## 8. Termination
+
+We reserve the right to suspend or terminate your access to the platform at any time, with or without cause, and with or without notice. You may also terminate your account at any time by contacting us.
+
+## 9. Changes to Terms
+
+We may update these Terms of Service from time to time. We will notify you of any material changes by posting the new terms on this page and updating the "Last Updated" date. Your continued use of the platform after changes constitutes acceptance of the updated terms.
+
+## 10. Contact Information
+
+If you have questions about these Terms of Service, please contact us at:
+
+**Email:** legal@qyntec.ai
+
+## Thank You
+
+https://qyntec.ai/thank-you.html
+
+You're on the List!
+
+Thank you for your interest in the future of healthcare technology. We'll keep you updated on our progress and reach out when we're ready to launch.
+
+What's Next?
+
+- You'll receive exclusive updates on our development progress
+- Early access to platform demos and beta testing
+- Priority consideration for partnership opportunities
+- Insights into how AI is transforming healthcare delivery
+
+© 2024 Qyntec.ai. All rights reserved.
